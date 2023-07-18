@@ -9,7 +9,7 @@ namespace TestCubes
     {
         public const string MOD_GUID = "IcedMilo.PlateUp.TestCubes";
         public const string MOD_NAME = "Test Cubes";
-        public const string MOD_VERSION = "0.1.1";
+        public const string MOD_VERSION = "0.1.2";
 
         public static AssetBundle Bundle;
 

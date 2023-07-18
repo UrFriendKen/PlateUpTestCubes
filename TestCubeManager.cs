@@ -30,6 +30,27 @@ namespace TestCubes
         }
 
         /// <summary>
+        /// Gets the cube prefab for a specified Type key. If prefab does not exist, creates a new cube prefab.
+        /// </summary>
+        /// <typeparam name="T">Type key. Usually your CustomGameDataObject type</typeparam>
+        /// <param name="name">Name appended to type to form GUID</param>
+        /// <param name="scaleX">X component of local scale</param>
+        /// <param name="scaleY">Y component of local scale</param>
+        /// <param name="scaleZ">Z component of local scale</param>
+        /// <param name="material">Cube material</param>
+        /// <param name="collider">If true, collider and navmesh enabled. Otherwise, disabled.</param>
+        /// <returns>Prefab GameObject for instantiation</returns>
+        public static GameObject GetPrefab<T>(string name, float scaleX = 1f, float scaleY = 1f, float scaleZ = 1f, Material material = null, bool collider = true)
+        {
+            return GetPrefab($"{typeof(T).AssemblyQualifiedName} {name}",
+                scaleX: scaleX,
+                scaleY: scaleY,
+                scaleZ: scaleZ,
+                material: material,
+                collider: collider);
+        }
+
+        /// <summary>
         /// Gets the cube prefab for a specified Identifier. If prefab does not exist, creates a new cube prefab.
         /// </summary>
         /// <param name="guid">Unique Object Identifier</param>
